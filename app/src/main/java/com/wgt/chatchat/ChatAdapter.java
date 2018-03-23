@@ -1,5 +1,7 @@
 package com.wgt.chatchat;
 
+import android.os.Build;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,8 +64,14 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
             if (isMe) {
                 lp.setMargins(50, 10, 5, 10);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    msg.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_END);
+                }
             } else {
                 lp.setMargins(5, 10, 50, 10);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    msg.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
+                }
             }
             layout_msg.setLayoutParams(lp);
         }
