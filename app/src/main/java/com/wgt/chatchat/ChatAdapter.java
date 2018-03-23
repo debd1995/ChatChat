@@ -74,6 +74,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
                 }
             }
             layout_msg.setLayoutParams(lp);
+
         }
     }
 
